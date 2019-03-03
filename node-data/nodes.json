@@ -1,0 +1,822 @@
+
+var nodes =
+[{
+  "type": "Feature",
+  "properties": 
+    {
+    "lat": 40.4217654,
+    "lon": -79.99593829999998,
+    "name": "Sweet Peaches",
+    "address": "635 E Warrington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 125,
+    "wlan1id": 126,
+    "ip":"100.127.5.81"
+    },
+  "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.99593829999998,40.4217654]
+    }
+ },
+ { "type": "Feature",
+   "properties": 
+    {
+    "lat": 40.401426,
+    "lon": -79.865015,
+    "name": "Nyia Page Community Center",
+    "address": "416 Library Street, Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+  "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.865015,40.401426]
+    }
+ },
+ {
+  "type": "Feature",
+   "properties": 
+    {
+    "lat": 40.421549,
+    "lon": -79.992598,
+    "name": "826 East Warrington Ave",
+    "address": "826 East Warrington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },  
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.992598,40.421549]
+    }
+  },
+  {
+   "type": "Feature",
+   "properties": 
+    {
+    "lat": 40.479061,
+    "lon":  -79.973188,
+    "name": "Millvale Community Garden",
+    "address": "Butler St., Millvale, PA 15209",
+    "hood": "Millvale",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": "100.110.239.146"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.973188,40.479061]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": 
+    {
+    "lat": 40.403990,
+    "lon":  -79.869722,
+    "name": "Free Press Building",
+    "address": "528 Braddock Ave, Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.869722,40.403990]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": 
+    {
+    "lat": 40.397978,
+    "lon": -79.861993,
+    "name": "Braddock Fire Station 113",
+    "address": "1100 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.861993,40.397978]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": 
+    {
+    "lat": 40.397860,
+    "lon": -79.861006,
+    "name": "UnSmoke Systems Artspace",
+    "address": "1137 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.861006,40.397860]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.399016,
+    "lon": -79.862898,
+    "name": "Braddock Farms",
+    "address": "1008 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.862898,40.399016]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.400585,
+    "lon": -79.864731,
+    "name": "Braddock Employment Training Center",
+    "address": "1008 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.864731,40.400585]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.401272,
+    "lon": -79.864968,
+    "name": "Braddock Redux",
+    "address": "1008 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.864968,40.401272]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.403251,
+    "lon": -79.868306,
+    "name": "Bell's Market",
+    "address": "603 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.868306,40.403251]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.403924,
+    "lon": -79.869629,
+    "name": "Hocky Brothers Auto Parts",
+    "address": "110 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.869629,40.403924]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.406155,
+    "lon": -79.873747,
+    "name": "Studebaker Metals",
+    "address": "534 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.873747,40.406155]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.405658,
+    "lon": -79.872762,
+    "name": "Ink Division",
+    "address": "218 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.872762,40.405658]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.403562,
+    "lon": -79.869099,
+    "name": "Stamboli's Poultry Market",
+    "address": "550 Braddock Ave., Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.869099,40.403562]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.421025,
+    "lon": -79.994101,
+    "name": "79 Allen st.",
+    "address": "79 Allen St., Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 225,
+    "wlan1id": 226,
+    "ip": "100.65.209.190"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.994101,40.421025]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.421535,
+    "lon": -79.992927,
+    "name": "Amsler's Pharmacy",
+    "address": "818 E Warrington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 520,
+    "wlan1id": 170,
+    "ip": "100.127.115.75"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.992927,40.421535]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.416665,
+    "lon": -79.986348,
+    "name": "125 Locust Street, Mt Oliver, PA 15210",
+    "address": "125 Locust Street, Mt Oliver, PA 15210",
+    "hood": "Mt. Oliver",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.986348,40.416665]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.416747,
+    "lon":  -79.986724,
+    "name": "127 Brownsville Rd., Mt Oliver, PA 15210",
+    "address": "127 Brownsville Rd., Mt Oliver, PA 15210",
+    "hood": "Mt. Oliver",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.986724,40.416747]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.42162363944305,
+    "lon": -79.99721378087997,
+    "name": "604 Beltzhoover Ave, Allentown",
+    "address": "604 E Warrington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.99721378087997,40.42162363944305]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.42178246558993,
+    "lon": -79.99411851167679,
+    "name": "The Hardware Store",
+    "address": "744 E Warrington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 114,
+    "wlan1id": 72,
+    "ip":"100.91.120.168"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.99411851167679,40.42178246558993]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.42146770067946,
+    "lon": -79.99228522181511,
+    "name": "1210 Arlington Ave, Allentown",
+    "address": "1210 Arlington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 207,
+    "wlan1id": 209,
+    "ip":"100.91.120.168"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.99228522181511,40.42146770067946]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.417765492763436,
+    "lon": -79.98515456914902,
+    "name": "1733 Arlington Ave, South Side Slopes",
+    "address": "1733 Arlington Ave, Pittsburgh, PA 15210",
+    "hood": "South Side Slopes",
+    "status": "live",
+    "wlan0id": 600,
+    "wlan1id": 0,
+    "ip":"100.91.54.193"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.98515456914902,40.417765492763436]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.431743003452226,
+    "lon": -79.95693370699883,
+    "name": "3442 Frazier St, South Oakland",
+    "address": "3442 Frazier St, Pittsburgh, PA 15213",
+    "hood": "South Oakland",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.95693370699883,40.431743003452226]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.437934569892626,
+    "lon": -79.9780909717083,
+    "name": "Hack Pittsburgh",
+    "address": "1936 5th Avenue, Pittsburgh, PA 15219",
+    "hood": "Uptown",
+    "status": "live",
+    "wlan0id": 578,
+    "wlan1id": 0,
+    "ip":"100.127.179.97"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.9780909717083,40.437934569892626]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.4359199,
+    "lon": -79.9818112,
+    "name": "StartUptown at The Paramount Film Exchange",
+    "address": "544 Miltenberger St., Pittsburgh, PA 15219",
+    "hood": "Uptown",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.9818112,40.4359199]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.421108,
+    "lon": -79.992794,
+    "name": "RE360",
+    "address": "829 Industry Street, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 524,
+    "wlan1id": 525,
+    "ip": "100.127.115.124"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.992794,40.421108]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.421773,
+    "lon": -79.995162,
+    "name": "Anonymous Node Host",
+    "address": "",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.995162,40.421773]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.422169,
+    "lon": -79.993279,
+    "name": "Caliguiri Building",
+    "address": "803 East Warrington Avenue, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 194,
+    "wlan1id": 0,
+    "ip": "100.127.181.215"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.993279,40.422169]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.421878,
+    "lon": -79.994377,
+    "name": "Primo Cutz",
+    "address": "741 E Warrington Ave, Pittsburgh, PA 15210",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": "100.73.229.107"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.994377,40.421878]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.427044,
+    "lon": -79.982186,
+    "name": "17th and Jane",
+    "address": "17th and Jane",
+    "hood": "South Side",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": "100.99.42.242"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.982186,40.427044]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.395048,
+    "lon": -80.021332,
+    "name": "631 Brookline Blvd.",
+    "address": "631 Brookline Blvd., Pittsburgh, PA 15226",
+    "hood": "Brookline",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-80.021332,40.395048]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.404438,
+    "lon": -79.870165,
+    "name": "Brew Gentlemen Brewery",
+    "address": "512 Braddock Ave, Braddock, PA 15104",
+    "hood": "Braddock",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": "100.41.213.103"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.870165,40.404438]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.394291,
+    "lon": -80.008284,
+    "name": "1415 Milan Ave",
+    "address": "1415 Milan Ave, Brookline, 15226",
+    "hood": "Brookline",
+    "status": "live",
+    "wlan0id": 437,
+    "wlan1id": 0,
+    "ip": "100.107.54.245"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-80.008284,40.394291]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.394356,
+    "lon": -80.004999,
+    "name": "1517 Milan Ave",
+    "address": "1517 Milan Ave, Brookline, 15226",
+    "hood": "Brookline",
+    "status": "live",
+    "wlan0id": 540,
+    "wlan1id": 0,
+    "ip": "100.217.165.62"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-80.004999,40.394356]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.404736,
+    "lon": -79.870861,
+    "name": "The Free Store",
+    "address": "401-465 Braddock Ave",
+    "hood": "Braddock",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.870861,40.404736]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.418099,
+    "lon":  -79.996358,
+    "name": "241 Orchard Place",
+    "address": "241 Orchard Place",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 569,
+    "wlan1id": 472,
+    "ip": "100.89.154.179"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.996358,40.418099]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.428918,
+    "lon":  -79.984250,
+    "name": "Beehive Coffeehouse",
+    "address": "1327 East Carson Ave",
+    "hood": "South Side",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.984250,40.428918]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+   {
+    "lat": 40.480279,
+    "lon":  -80.011995,
+    "name": "Perrysville Ave",
+    "address": "3308 Perrysville Ave",
+    "hood": "Perry North",
+    "status": "planned",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": 0
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-80.011995,40.480279]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.423068,
+    "lon":  -79.998515,
+    "name": "Winton St. and Craighead St",
+    "address": "Winton St. and Craighead St",
+    "hood": "Allentown",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": "100.157.2.72"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-79.998515,40.423068]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties":
+    {
+    "lat": 40.483098, 
+    "lon":  -80.016651,
+    "name": "Riverview Park site A",
+    "address": "57 Riverview Ave. ",
+    "hood": "Perry North",
+    "status": "live",
+    "wlan0id": 0,
+    "wlan1id": 0,
+    "ip": "100.7.55.78"
+    },
+    "geometry":
+    {
+    "type":"Point",
+    "coordinates":[-80.016651,40.483098]
+    }
+  }
+];

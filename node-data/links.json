@@ -1,0 +1,48 @@
+
+var nodeLinks =
+[
+  {
+    "type": "LineString",
+    "coordinates": [[-79.9780909717083, 40.437934569892626], [-79.982186,40.427044]],
+    "from":"Hack Pittsburgh",
+    "to":"17th and Jane"
+  }, 
+  {
+    "type": "LineString",
+    "coordinates": [[-79.9780909717083, 40.437934569892626],[-79.95693370699883,40.431743003452226]],
+    "from":"Hack Pittsburgh",
+    "to":"3442 Frazier St, South Oakland"
+  },
+
+  {
+    "type": "LineString",
+    "coordinates": [[-79.98515456914902,40.417765492763436],[-79.986348,40.416665]],
+    "from":"1733 Arlington Ave, South Side Slopes",
+    "to":"125 Locust Street, Mt Oliver, PA 15210"
+  },
+  {
+    "type": "LineString",
+    "coordinates": [[-79.98515456914902,40.417765492763436],[-79.95693370699883,40.431743003452226]],
+    "from":"1733 Arlington Ave, South Side Slopes",
+    "to":"3442 Frazier St, South Oakland"
+  },
+  {
+    "type": "LineString",
+    "coordinates": [[-79.993279,40.422169],[-80.008284,40.394291]],
+    "from":"Caliguiri Building",
+    "to":"1415 Milan Ave"
+  },
+  {
+    "type": "LineString",
+    "coordinates": [[-79.9818112,40.4359199],[-79.95693370699883,40.431743003452226]],
+    "from":"StartUptown at The Paramount Film Exchange",
+    "to":"3442 Frazier St, South Oakland"
+  }
+
+
+];
+var lineStyle = {
+    			    "color": "#ff7800",
+    			    "weight": 5,
+    			    "opacity": 0.65
+    			};

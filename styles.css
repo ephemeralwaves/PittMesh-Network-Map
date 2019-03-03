@@ -1,0 +1,82 @@
+#main,html,body,p {
+    height: 100%;
+    width:100%;
+	font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
+	margin: 0px;
+}
+a{
+    color:#176499;	
+}
+h2{
+	text-align: center;	
+}
+#pittmesh {
+    height: 100%;
+}
+
+#navbar {
+    width: 100%;
+    height:auto;
+    bottom: 0;
+	left: 0;
+	position:fixed;
+}
+
+#about{
+	background-color: #ccc;
+	opacity: 0.85;
+	-moz-border-radius: 15px;
+    border-radius: 15px;
+    left: 25%;
+	top: 5%;
+	width: 50%;
+	height:auto;
+	position:fixed;
+	display: none;
+	padding: 10px;
+}
+#closeBox, #closeBox a{
+	float: right;
+	text-decoration: none; 
+	font-size:20px;
+}
+.text-labels {
+    font-size: 2em;
+    font-weight: 700;
+    /* Use color, background, set margins for offset, etc */
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+    background-color: #111;
+    
+    
+.crop-box {
+    width: 70px;
+    height: 50px;
+    overflow: hidden;
+  }
+.crop-box img {
+    max-height: 50px;
+    max-width: 70px;
+    margin: 0px 0px 0px 0px;
+    float:right;
+  }

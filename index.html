@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="libraries/leaflet/leaflet.css" />
+	<link rel="stylesheet" href="styles.css" />
+	<script src="libraries/leaflet/leaflet.js"></script>
+	<script src="libraries/leaflet/plugins/Leaflet.LocationShare-master/Leaflet.LocationShare.js"></script>
+	<script src="node-data/nodes.json" type="text/javascript"></script>
+	<script src="node-data/links.json" type="text/javascript"></script>
+
+	<title>Pittmesh.net</title>
+	<head>
+		<div id="main">
+			<body>
+				<div id="pittmesh">
+					
+		 <div style="float:right">
+          <table>
+            <tr>
+              <td style="width:50px">
+                <span class="crop-box">
+                  <a href="http://www.cliffcloud.com"><img class="topImage" src="http://www.cliffcloud.com/assets/images/cliffcloud_logo_small.png" /></a>
+                </span>
+              </td>
+              <td style="width:50px">
+                <span class="crop-box">
+                  <a href="https://github.com/CliffCloud/Leaflet.LocationShare"><img class="topImage" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" /></a>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+					<script>
+						//php gets data from mysql
+
+						// <?php include ('node-data/php/test.php'); ?>
+
+						//Description
+						//load map (simple way)
+						//var mymap = L.map('pittmesh').setView([40.434148, -80.000711], 12);
+
+						//custom icon marker
+						var orangeIcon = L.icon({
+							iconUrl : 'images/marker-iconOrange.png',
+							shadowUrl : 'images/marker-shadow.png',
+
+							iconSize : [25, 41], // size of the icon
+							shadowSize : [41, 41], // size of the shadow
+							iconAnchor : [15, 40], // point of the icon which will correspond to marker's location
+							shadowAnchor : [4, 62], // the same for the shadow
+							popupAnchor : [-1, -40] // point from which the popup should open relative to the iconAnchor
+						});
+
+						//defining which tilelayers will be used
+						var cartodbLight = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+							id : 'pittmesh',
+							attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://cartodb.com/">CartoDB</a>'
+						}),
+						    cartodbDark = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+							id : 'pittmesh',
+							attribution : 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://cartodb.com/">CartoDB</a>'
+						});
+						//Setting parameters for main Pittsburgh map to be displayed
+						var mymap = L.map('pittmesh', {
+							center : [40.444148, -79.970000],
+							zoom : 12,
+							layers : [cartodbDark, cartodbLight]
+						});
+
+						//Node Links via links.json data
+						var linkLayer = L.geoJson(nodeLinks, {
+							style : lineStyle
+						}).addTo(mymap);
+
+						//load nodes.json data
+						//this creates the LIVE nodes layer and adds it to the mymap
+						var nodesLive = L.geoJson(nodes, {
+							//filter option to select only live nodes
+							filter : function(feature, layer) {
+								if (feature.properties.status == "live") {
+									return true;
+								}
+							},
+							//setting custom icon to show up instead of default blue
+							pointToLayer : function(feature, latlng) {
+								return L.marker(latlng, {
+									icon : orangeIcon
+								});
+							},
+							onEachFeature : function(feature, layer) {
+								//show name and associated network traffic in popup
+								//check if there is wlan0 and wlan1 data
+								//**See notes about url formation and the meanings of values after </body>
+
+								//check if wlan0id, wlan1id and ip are present
+								if (feature.properties.wlan0id > 0 && feature.properties.wlan1id > 0 && feature.properties.ip != 0)
+									layer.bindPopup(feature.properties.name + " Node" + "<br /> Address:  " + feature.properties.address + "<br />IP Address: " + feature.properties.ip + "<br /><br />Wireless Network Traffic <br/>" + "<img src='http://workhardpgh.zhrodague.net/cacti/graph_image.php?local_graph_id=" + feature.properties.wlan0id + "&rra_id=3&graph_width=200&graph_height=100&graph_nolegend=true'>" + "<br />" + "<img src='http://workhardpgh.zhrodague.net/cacti/graph_image.php?local_graph_id=" + feature.properties.wlan1id + "&rra_id=3&graph_width=200&graph_height=100&graph_nolegend=true'>");
+								//check if wlan0id and ip are the only ones present
+								else if (feature.properties.wlan0id > 0 && feature.properties.wlan1id == 0 && feature.properties.ip != 0)
+									layer.bindPopup(feature.properties.name + " Node" + "<br /> Address:  " + feature.properties.address + "<br />IP Address: " + feature.properties.ip + "<br /><br />Wireless Network Traffic <br/>" + "<img src='http://workhardpgh.zhrodague.net/cacti/graph_image.php?local_graph_id=" + feature.properties.wlan0id + "&rra_id=3&graph_width=200&graph_height=100&graph_nolegend=true'>");
+								//check if only ip is present
+								else if (feature.properties.wlan0id == 0 && feature.properties.wlan1id == 0 && feature.properties.ip != 0)
+									layer.bindPopup(feature.properties.name + " Node" + "<br /> Address:  " + feature.properties.address + "<br />IP Address: " + feature.properties.ip);
+								//if no wlan0id, wlan1id or ip
+								else
+									layer.bindPopup(feature.properties.name + " Node" + "<br /> Address:  " + feature.properties.address);
+							}
+						}).addTo(mymap);
+
+						//this creates the Planned Nodes layer and adds it to the mymap
+						var nodesPlanned = L.geoJson(nodes, {
+							//filter option to only contain live nodes
+							filter : function(feature, layer) {
+								if (feature.properties.status == "planned") {
+									return true;
+								}
+							},
+							onEachFeature : function(feature, layer) {
+								//show name in popup
+								layer.bindPopup(feature.properties.name + " Node" + "<br /> Address:  " + feature.properties.address);
+							}
+						}).addTo(mymap);
+						//Map layers, more (or less) map bases can be added if desired!
+						var baseMaps = {
+							"CartoDB Dark" : cartodbDark,
+							"CartoDB Light" : cartodbLight
+
+						};
+						var overlayMaps = {
+							//layers that sit on top of baseMaps and that have radio buttons to turn their visibility on or off
+							"Node Links" : linkLayer,
+							"Planned" : nodesPlanned,
+							"Live" : nodesLive
+
+						};
+						//Add layers from above to map
+						L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+					</script>
+				</div>
+
+			</body>
+
+			<div id="navbar">
+				<ul>
+					<li>
+						<a href="#" onclick="toggle_visibility('about');">About</a>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.meetup.com/pittmeshworkinggroup/">Events</a>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.pittmesh.net/ipcalc">IP Calculator</a>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.metamesh.org/#!contact-meta-mesh/c24vq">Contact</a>
+					</li>
+				</ul>
+			</div>
+
+			<div id="about">
+				<div id="closeBox">
+					<a href="#" onclick="toggle_visibility('about');">
+					<p>
+						x
+					</p></a>
+				</div>
+				<p>
+					<h2>PittMesh is a community-owned wireless network in Pittsburgh, Pennsylvania.</h2>
+					<br />
+					PittMesh is a <a href="https://en.wikipedia.org/wiki/Wireless_mesh_network">wireless mesh network</a> constructed by enthusiast
+					volunteers and guided under the auspices of <a href="http://www.metamesh.org/">META MESH</a>. For a brief introduction to PittMesh and mesh networking in general, please view our <a href="https://www.youtube.com/watch?v=OvAT7DTspaM">informational video</a>.
+					<br />
+					<br />
+					PittMesh currently has <b>37</b> nodes hoisted. There are 9 nodes planned for deployment. There are 7 point-to-point links active. Live connectivity data coming soon. Planned nodes in Braddock are currently hypothetical and may be moved, added, or subtracted based on conversations with prospective node hosts. If you want to be a node host in Braddock, contact us!
+					<br/>
+					<br />
+					Want to help build the future of connectivity in Pittsburgh? <a href="http://www.metamesh.org/#!contact-meta-mesh/c24vq">Contact Meta Mesh</a>.
+				</p>
+			</div>
+
+			<script>
+				//To turn visibility on or off of a div
+				function toggle_visibility(id) {
+					var e = document.getElementById(id);
+					if (e.style.display == 'block')
+						e.style.display = 'none';
+					else
+						e.style.display = 'block';
+				}
+			</script>
+			<!--
+			Notes on cacti URL and the meaning of values
+			URL: <img src="http://workhardpgh.zhrodague.net/cacti/graph_image.php?local_graph_id=(A)&rra_id=(B)&graph_width=(C)&graph_height=(D)&graph_nolegend=(E)">
+			(A) graph ID
+			(B) 1=Daily, 2=Weekly, 3=Monthly, 4=Yearly, 5=Hourly
+			(C),(D) graph width/height [NOTICE: This size is for plot area, not for whole image]
+			(E) true (or blank)-->
+
+			<!--more features to add
+			a)https://github.com/CliffCloud/Leaflet.LocationShare, enables users to place marker which generates url to send to website admin (client side)
+			b)d3 js library?
+			c)side bar provides more space to layout data: https://github.com/Turbo87/leaflet-sidebar/
+			d)wardriving data heat map: https://github.com/Leaflet/Leaflet.heat
+			-->
+		</div>
+	</head>
+</html>
